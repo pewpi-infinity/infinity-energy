@@ -1,251 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fermi Layer - Infinity Ion Manifesto</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>Infinity Energy</title>
+<meta name="infinity-category" content="energy"/>
+<meta name="infinity-cart" content="016"/>
+<meta name="infinity-token-id" content="🧱Kris🔑"/>
+<meta name="mongoose-os-intent" content="build, connect, grow, serve"/>
 <style>
-:root{--bg:#0a0e13;--panel:#0f1520;--line:rgba(255,255,255,.1);--text:#e8eef7;--muted:#8a99ab;--accent:#10b981;--green:#10b981;--orange:#f59e0b;--purple:#8b5cf6}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:radial-gradient(900px 600px at 80% -10%,#064e3b,transparent 50%),var(--bg);color:var(--text);font-family:'Georgia',serif;line-height:1.8;min-height:100vh}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:800px;margin:auto;padding:20px}
-header{background:rgba(10,14,19,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 16px;position:sticky;top:0;z-index:10}
-.hdr{display:flex;gap:12px;align-items:center;flex-wrap:wrap;max-width:800px;margin:auto}
-.brand{font-weight:800;font-size:1rem;font-family:system-ui,sans-serif}
-.nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
-.nav a{font-size:11px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:system-ui,sans-serif}
-.nav a:hover{background:rgba(255,255,255,.06);text-decoration:none}
-.nav a.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.volume{text-align:center;padding:50px 20px 30px;border-bottom:1px solid var(--line)}
-.volume h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;font-family:system-ui,sans-serif}
-.volume .subtitle{color:var(--muted);font-size:14px;font-family:system-ui,sans-serif}
-.volume .chapter-tag{display:inline-block;padding:4px 14px;border:1px solid var(--accent);border-radius:99px;font-size:12px;color:var(--accent);margin-top:12px;font-family:system-ui,sans-serif}
-h2{font-size:1.3rem;margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-family:system-ui,sans-serif}
-h3{font-size:1.05rem;margin:28px 0 12px;color:var(--accent);font-family:system-ui,sans-serif}
-p{margin-bottom:16px;font-size:15px}
-ul,ol{margin:0 0 16px 24px;font-size:15px}
-li{margin-bottom:6px}
-strong{color:#fff}
-.eq{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:16px 20px;margin:16px 0;text-align:center;font-family:'Courier New',monospace;font-size:15px;line-height:1.8;color:#6ee7b7;overflow-x:auto}
-.eq .label{display:block;font-size:11px;color:var(--muted);margin-top:8px;font-family:system-ui,sans-serif;text-align:right}
-.expand{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
-.expand-header{padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.02);font-family:system-ui,sans-serif;font-weight:600;font-size:14px}
-.expand-header:hover{background:rgba(255,255,255,.04)}
-.expand-arrow{transition:transform .2s;font-size:12px}
-.expand-body{padding:0 16px;max-height:0;overflow:hidden;transition:max-height .3s ease}
-.expand.open .expand-body{max-height:2000px;padding:12px 16px}
-.expand.open .expand-arrow{transform:rotate(90deg)}
-.insight{border-left:3px solid var(--green);padding:12px 16px;margin:16px 0;background:rgba(16,185,129,.05);border-radius:0 8px 8px 0}
-.insight strong{color:var(--green)}
-.warning{border-left:3px solid var(--orange);padding:12px 16px;margin:16px 0;background:rgba(245,158,11,.05);border-radius:0 8px 8px 0}
-.warning strong{color:var(--orange)}
-.chapter-nav{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
-.chapter-nav a{padding:6px 14px;border:1px solid var(--line);border-radius:8px;font-size:12px;color:var(--text);font-family:system-ui,sans-serif}
-.chapter-nav a:hover{background:rgba(255,255,255,.06);text-decoration:none}
-.chapter-nav a.current{background:var(--accent);border-color:var(--accent);color:#fff}
-.search-bar{margin:20px 0;display:flex;gap:8px}
-.search-bar input{flex:1;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03);color:var(--text);font-size:13px;outline:none;font-family:system-ui,sans-serif}
-.search-bar input:focus{border-color:var(--accent)}
-footer{border-top:1px solid var(--line);margin-top:50px;padding:20px 0;text-align:center;font-size:12px;color:var(--muted);font-family:system-ui,sans-serif}
+:root{--bg:#0b0f14;--sf:#111822;--cd:#161d2a;--bd:#222d3d;--ac:#3fb950;--gold:#f5c542;--text:#e6edf3;--mt:#8b949e;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;line-height:1.5;overflow-x:hidden;}
+a{color:var(--ac);text-decoration:none;}
+
+.hdr{background:var(--sf);padding:10px 12px;border-bottom:2px solid var(--ac);position:sticky;top:0;z-index:50;}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-weight:800;font-size:1.1rem;}
+.logo em{color:var(--ac);font-style:normal;}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px;}
+.nav a{font-size:0.7rem;padding:3px 7px;border:1px solid var(--bd);border-radius:6px;color:var(--text);white-space:nowrap;}
+.nav a:hover{background:rgba(255,255,255,0.06);text-decoration:none;}
+
+.hero{text-align:center;padding:20px 12px;background:radial-gradient(ellipse at top,rgba(63,185,80,0.15),transparent 70%);}
+.hero-icon{font-size:3rem;}
+.hero h1{font-size:1.4rem;margin:6px 0;}
+.hero p{color:var(--mt);font-size:0.85rem;max-width:500px;margin:0 auto;}
+
+.section{padding:12px;border-bottom:1px solid var(--bd);}
+.section h2{font-size:0.95rem;margin-bottom:8px;color:var(--gold);}
+
+.gadget-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+.gadget{background:var(--cd);border:1px solid var(--bd);border-left:3px solid var(--ac);border-radius:8px;padding:10px;transition:all 0.15s;}
+.gadget:hover{border-color:var(--ac);transform:translateY(-2px);}
+.g-icon{font-size:1.5rem;}
+.g-name{font-weight:700;font-size:0.8rem;margin-top:2px;}
+.g-status{font-size:0.65rem;color:var(--mt);margin-top:2px;}
+
+.intent{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:12px;margin:12px;}
+.intent h3{color:var(--ac);font-size:0.85rem;margin-bottom:6px;}
+.intent p{font-size:0.75rem;color:var(--mt);margin:4px 0;}
+.intent code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-size:0.7rem;}
+
+.eco-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;}
+.eco-chip{background:var(--cd);border:1px solid var(--bd);border-radius:20px;padding:4px 10px;font-size:0.65rem;white-space:nowrap;}
+.eco-chip:hover{border-color:var(--gold);}
+
+.chat-fab{position:fixed;right:10px;bottom:10px;z-index:999;background:rgba(0,0,0,0.85);color:#fff;border:1px solid var(--bd);border-radius:999px;padding:8px 12px;font-weight:700;font-size:0.75rem;cursor:pointer;}
+.chat-panel{position:fixed;right:6px;bottom:50px;z-index:999;width:calc(100vw - 12px);max-width:360px;height:min(350px,55vh);background:rgba(11,15,20,0.95);border:1px solid var(--bd);border-radius:10px;display:none;flex-direction:column;overflow:hidden;}
+.chat-head{padding:6px 10px;font-weight:700;font-size:0.8rem;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;}
+.chat-body{flex:1;overflow-y:auto;padding:6px;font-family:monospace;font-size:0.7rem;}
+.chat-line{margin:3px 0;white-space:pre-wrap;}
+.chat-bar{display:flex;gap:4px;padding:6px;border-top:1px solid var(--bd);}
+.chat-in{flex:1;background:rgba(255,255,255,0.06);border:1px solid var(--bd);border-radius:6px;padding:5px 8px;color:#fff;outline:none;font-size:0.75rem;}
+.chat-send{background:var(--ac);color:#fff;border:none;border-radius:6px;padding:5px 10px;font-weight:700;cursor:pointer;font-size:0.75rem;}
+
+.footer{text-align:center;padding:12px;font-size:0.65rem;color:var(--mt);border-top:1px solid var(--bd);}
 </style>
 </head>
 <body>
 
-<header>
 <div class="hdr">
-  <span class="brand">&#x1F4D8; Ion Manifesto</span>
-  <nav class="nav">
-    <a href="https://pewpi-infinity.github.io/infinity-logic/">Electrostatics</a>
-    <a href="#" class="active">Fermi Layer</a>
-    <a href="https://pewpi-infinity.github.io/infinity-currency/">Electrochemistry</a>
-    <a href="https://pewpi-infinity.github.io/infinity-dynamics/">Ion Transport</a>
-    <a href="https://pewpi-infinity.github.io/infinity-memory/">Ion Gradients</a>
-    <a href="https://pewpi-infinity.github.io/infinity-quantum-lighting/">Maxwell</a>
-    <a href="https://pewpi-infinity.github.io/infinity-crown-index/">Crown Index</a>
-  </nav>
-</div>
-</header>
-
-<div class="volume">
-  <div class="chapter-tag">Volume I &mdash; Part III</div>
-  <h1>Fermi Layer</h1>
-  <p class="subtitle">Why Metals Stabilize &mdash; Quantum Mechanical Foundation</p>
-</div>
-
-<div class="wrap">
-
-<div class="search-bar">
-  <input id="search" placeholder="Search this chapter..." oninput="searchContent()">
-</div>
-
-<div id="content">
-
-<h2>2.1 The Problem: Why Doesn't Metal Collapse?</h2>
-
-<p>Sodium metal: positive ion cores (Na<sup>+</sup>) in a periodic lattice, surrounded by delocalized electrons.</p>
-
-<p>Electrostatic attraction pulls everything together. So what prevents collapse?</p>
-
-<div class="insight">
-<strong>Answer:</strong> Not magnetism. Not mystery. Quantum exclusion. Electrons obey Fermi-Dirac statistics, and Pauli exclusion creates degeneracy pressure.
-</div>
-
-<h2>2.2 Fermi-Dirac Distribution</h2>
-
-<p>The probability that a quantum state of energy E is occupied:</p>
-
-<div class="eq">
-f(E) = 1 / [exp((E - E<sub>F</sub>) / kT) + 1]
-<span class="label">Fermi-Dirac distribution</span>
-</div>
-
-<p>Where:</p>
-<ul>
-  <li><strong>E<sub>F</sub></strong> = Fermi energy (highest occupied state at T = 0)</li>
-  <li><strong>k</strong> = Boltzmann constant (1.38 &times; 10<sup>-23</sup> J/K)</li>
-  <li><strong>T</strong> = temperature</li>
-</ul>
-
-<div class="expand" onclick="this.classList.toggle('open')">
-  <div class="expand-header">
-    <span>&#x1F9CA; At T = 0: The sharp cutoff</span>
-    <span class="expand-arrow">&#x25B6;</span>
+  <div class="hdr-top">
+    <div class="logo"><em>infinity</em>-energy</div>
+    <span style="font-size:0.7rem;color:var(--mt);">🧱Kris🔑</span>
   </div>
-  <div class="expand-body">
-    <p>At absolute zero:</p>
-    <ul>
-      <li>All states below E<sub>F</sub> are <strong>completely filled</strong> (f = 1)</li>
-      <li>All states above E<sub>F</sub> are <strong>completely empty</strong> (f = 0)</li>
-    </ul>
-    <p>This creates a sharp boundary &mdash; the Fermi surface. At finite temperature, the boundary softens over a range of roughly kT around E<sub>F</sub>.</p>
-    <p>Only electrons within ~kT of the Fermi surface can participate in conduction, heat capacity, or chemical reactions. The vast majority of electrons are "frozen" in place by Pauli exclusion.</p>
+  <div class="nav">
+    <a href="https://pewpi-infinity.github.io/infinity-crown-index/">👑 Crown</a>
+    <a href="https://pewpi-infinity.github.io/infinity-master-hub/">🌐 Hub</a>
+    <a href="https://pewpi-infinity.github.io/infinity-spark-market/">💰 Market</a>
+    <a href="https://pewpi-infinity.github.io/MARIO-TOKENS/">🎮 Mario</a>
+    <a href="https://pewpi-infinity.github.io/smug_look/">🧱 Octave</a>
   </div>
 </div>
 
-<h2>2.3 Fermi Energy</h2>
-
-<p>For a free electron gas, the Fermi energy depends on electron density:</p>
-
-<div class="eq">
-E<sub>F</sub> = (&hbar;&sup2; / 2m) &middot; (3&pi;&sup2; n)<sup>2/3</sup>
-<span class="label">Fermi energy of free electron gas</span>
+<div class="hero">
+  <div class="hero-icon">🔋</div>
+  <h1>Energy</h1>
+  <p>Energy storage, conservation, cycling</p>
 </div>
 
-<p>Where n = N/V is the electron number density.</p>
-
-<div class="insight">
-<strong>Critical relationship:</strong> E<sub>F</sub> &prop; n<sup>2/3</sup>. Increase electron density &rarr; Fermi energy increases. Compress electrons &rarr; their energy rises sharply. This is the quantum pressure that prevents collapse.
-</div>
-
-<h2>2.4 Degeneracy Pressure</h2>
-
-<p>When electrons are compressed, Pauli exclusion forces them into higher energy states. This creates a pressure:</p>
-
-<div class="eq">
-P = (2/3) &middot; n &middot; E<sub>F</sub> / V
-<span class="label">Electron degeneracy pressure</span>
-</div>
-
-<p>This pressure is not thermal. It exists even at T = 0. It is purely quantum mechanical.</p>
-
-<div class="expand" onclick="this.classList.toggle('open')">
-  <div class="expand-header">
-    <span>&#x2B50; Why this matters beyond metals</span>
-    <span class="expand-arrow">&#x25B6;</span>
-  </div>
-  <div class="expand-body">
-    <p>Electron degeneracy pressure is what supports:</p>
-    <ul>
-      <li><strong>White dwarf stars</strong> &mdash; held up against gravitational collapse by electron degeneracy</li>
-      <li><strong>Metallic bonding</strong> &mdash; the restoring force that sets equilibrium lattice spacing</li>
-      <li><strong>Semiconductor band structure</strong> &mdash; Fermi level position determines conductor/insulator</li>
-    </ul>
-    <p>The same physics at different scales.</p>
+<div class="section">
+  <h2>🔋 Gadgets & Tools</h2>
+  <div class="gadget-grid">
+    <div class="gadget"><div class="g-icon">🔋</div><div class="g-name">Battery Monitor</div><div class="g-status">Ready</div></div>
+    <div class="gadget"><div class="g-icon">🔋</div><div class="g-name">Conservation Engine</div><div class="g-status">Ready</div></div>
+    <div class="gadget"><div class="g-icon">🔋</div><div class="g-name">Cycle Optimizer</div><div class="g-status">Ready</div></div>
+    <div class="gadget"><div class="g-icon">🔋</div><div class="g-name">Energy Forge</div><div class="g-status">Ready</div></div>
   </div>
 </div>
 
-<h2>2.5 Metallic Stability: The Balance</h2>
-
-<p>Metal stability is a balance of three forces:</p>
-
-<ol>
-  <li><strong>Electrostatic attraction</strong> between positive ion cores and electron gas (pulls inward)</li>
-  <li><strong>Electron degeneracy pressure</strong> from Pauli exclusion (pushes outward)</li>
-  <li><strong>Ion-ion repulsion</strong> at short range (pushes outward)</li>
-</ol>
-
-<p>Equilibrium occurs at the lattice spacing where total energy is minimized:</p>
-
-<div class="eq">
-dU/dr |<sub>r=r<sub>0</sub></sub> = 0
-<span class="label">Energy minimization condition</span>
+<div class="intent">
+  <h3>🧠 Mongoose.OS Soul Intent</h3>
+  <p><strong>Cart:</strong> <code>C13B0 Cart 016</code></p>
+  <p><strong>Mission:</strong> Energy storage, conservation, cycling. Connected to the Infinity Crown ecosystem.</p>
+  <p><strong>Intent:</strong> Build, connect, grow, serve. Every component knows its position in the system.</p>
+  <p><strong>Position:</strong> <code>infinity-energy</code> → Crown Index → Master Hub → Marketplace</p>
 </div>
 
-<div class="insight">
-<strong>Manifesto statement:</strong> Metallic stability is not mysterious. It is the balance point between electrostatic attraction and quantum mechanical exclusion pressure. Structure exists where energy is minimized under constraints.
-</div>
-
-<h2>2.6 Connection to Conduction</h2>
-
-<p>In metals, electron diffusion is suppressed because most low-energy states are already filled. Only electrons near E<sub>F</sub> participate in conduction.</p>
-
-<p>This is why metallic conduction depends on the density of states at the Fermi surface, not on total electron count.</p>
-
-<div class="expand" onclick="this.classList.toggle('open')">
-  <div class="expand-header">
-    <span>&#x1F517; Link to Band Theory</span>
-    <span class="expand-arrow">&#x25B6;</span>
-  </div>
-  <div class="expand-body">
-    <p>Allowed energy states form bands. Where the Fermi level falls determines material behavior:</p>
-    <ul>
-      <li><strong>Metal:</strong> E<sub>F</sub> falls inside a partially filled band &rarr; conduction</li>
-      <li><strong>Semiconductor:</strong> E<sub>F</sub> falls in a small gap &rarr; thermally activated conduction</li>
-      <li><strong>Insulator:</strong> E<sub>F</sub> falls in a large gap &rarr; no conduction</li>
-    </ul>
-    <p>Ions in solids alter band structure through their local electric fields. Doping a semiconductor is literally adding ions to shift the Fermi level.</p>
+<div class="section">
+  <h2>🔗 Ecosystem</h2>
+  <div class="eco-row">
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/infinity-crown-index/">👑 Crown Index</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/infinity-master-hub/">🌐 Master Hub</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/infinity-spark-market/">💰 Marketplace</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/infinity-spark-core/">⚡ Spark Core</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/infinity-spark-bridge/">🔗 Bridge</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/infinity-spark-terminal/">🖥️ Terminal</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/smug_look/">🧱 Octave</a>
+    <a class="eco-chip" href="https://pewpi-infinity.github.io/MARIO-TOKENS/">🎮 Mario Tokens</a>
   </div>
 </div>
 
-<h2>2.7 Clean Boundary: Quantum vs Classical</h2>
-
-<p><strong>Metals require quantum statistics</strong> (Fermi-Dirac).</p>
-<p><strong>Ion channels are mostly classical</strong> (Nernst, GHK).</p>
-<p>But both are energy minimization systems under constraints.</p>
-
-<div class="chapter-nav">
-  <strong style="font-size:13px;margin-right:8px">Chapters:</strong>
-  <a href="https://pewpi-infinity.github.io/infinity-logic/">Electrostatics</a>
-  <a class="current" href="#">Fermi Layer</a>
-  <a href="https://pewpi-infinity.github.io/infinity-currency/">Electrochemistry</a>
-  <a href="https://pewpi-infinity.github.io/infinity-dynamics/">Ion Transport</a>
-  <a href="https://pewpi-infinity.github.io/infinity-memory/">Ion Gradients</a>
-  <a href="https://pewpi-infinity.github.io/infinity-quantum-lighting/">Maxwell Unification</a>
+<div class="footer">
+  infinity-energy &mdash; C13B0 Cart 016 &mdash; Part of <a href="https://pewpi-infinity.github.io/infinity-crown-index/">Infinity Crown System</a><br/>
+  <a href="https://pewpi-infinity.github.io/infinity-spark-market/">Buy on Marketplace</a> | mongoose.os guided
 </div>
 
-<div class="warning">
-<strong>Important reset:</strong> Nothing in Fermi statistics, ionic lattice theory, electrochemistry, or Maxwell's equations permits infinite energy, gravity cancellation, plasma mass switching, or matter phase teleportation. Build from what emerges from these equations.
-</div>
-
-</div><!-- /content -->
-</div><!-- /wrap -->
-
-<footer>
-  <div class="wrap">
-    Infinity Ion Manifesto &middot; Volume I &middot; Part of the <a href="https://pewpi-infinity.github.io/infinity-crown-index/">Infinity Crown Index</a>
+<!-- ROGERS CHAT -->
+<div class="chat-fab" id="cf">🧱 Chat</div>
+<div class="chat-panel" id="cp">
+  <div class="chat-head"><span>🧱 Energy Terminal</span><span id="cc" style="cursor:pointer">✕</span></div>
+  <div class="chat-body" id="cb">
+    <div class="chat-line" style="color:var(--gold)">Welcome to infinity-energy</div>
+    <div class="chat-line" style="color:var(--mt)">Commands: help, gadgets, status, intent, ecosystem</div>
   </div>
-</footer>
+  <div class="chat-bar">
+    <input class="chat-in" id="ci" placeholder="Type a command..."/>
+    <button class="chat-send" id="cs">GO</button>
+  </div>
+</div>
 
 <script>
-function searchContent() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const els = document.querySelectorAll("#content h2, #content h3, #content p, #content li, #content .eq");
-  els.forEach(el => {
-    if (!q) { el.style.opacity = "1"; return; }
-    el.style.opacity = el.textContent.toLowerCase().includes(q) ? "1" : "0.2";
-  });
-}
+(function(){
+  const fab=document.getElementById("cf"),panel=document.getElementById("cp"),
+    body=document.getElementById("cb"),input=document.getElementById("ci"),
+    send=document.getElementById("cs"),close=document.getElementById("cc");
+  const gadgets=["Battery Monitor", "Conservation Engine", "Cycle Optimizer", "Energy Forge"];
+  function line(t,c){const d=document.createElement("div");d.className="chat-line";if(c)d.style.color=c;d.textContent=t;body.appendChild(d);body.scrollTop=body.scrollHeight;}
+  fab.onclick=()=>{panel.style.display="flex";input.focus();};
+  close.onclick=()=>{panel.style.display="none";};
+  function run(){
+    const q=(input.value||"").trim().toLowerCase();if(!q)return;
+    line("> "+q,"var(--ac)");input.value="";
+    if(q==="help")line("Commands: help, gadgets, status, intent, ecosystem","var(--mt)");
+    else if(q==="gadgets"){line("🔋 Gadgets:","var(--gold)");gadgets.forEach(g=>line("  "+g));}
+    else if(q==="status")line("🧱 infinity-energy: ONLINE | Cart 016 | Connected","var(--ac)");
+    else if(q==="intent")line("🧠 Mission: Energy storage, conservation, cycling","var(--gold)");
+    else if(q==="ecosystem")line("👑Crown 🌐Hub 💰Market ⚡Core 🔗Bridge 🖥️Terminal 🧱Octave 🎮Mario","var(--gold)");
+    else line("Unknown. Try: help","var(--mt)");
+  }
+  send.onclick=run;input.onkeydown=e=>{if(e.key==="Enter")run();};
+})();
 </script>
 </body>
 </html>
